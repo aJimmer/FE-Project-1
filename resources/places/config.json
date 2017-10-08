@@ -1,0 +1,37 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name",
+			"order": 0
+		},
+		"description": {
+			"name": "description",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "description",
+			"order": 1
+		},
+		"imageurl": {
+			"name": "imageurl",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "imageurl",
+			"order": 2
+		},
+		"rating": {
+			"name": "rating",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "rating",
+			"order": 3
+		}
+	}
+}
