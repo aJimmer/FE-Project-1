@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 
   function showError(error) {
     var message = "An error occurred";
@@ -32,3 +32,4 @@ $(document).ready(function() {
   });
   return false;
 });
+*/

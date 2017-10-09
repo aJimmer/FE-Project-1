@@ -1,4 +1,4 @@
-/*(function (window) {
+(function (window) {
   'use strict';
   var App = window.App || {};
   function DataStore() {
@@ -33,4 +33,3 @@
   App.DataStore = DataStore;
   window.App = App;
 })(window);
-*/
