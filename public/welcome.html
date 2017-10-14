@@ -1,16 +1,188 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Deployd login form</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+  <title>Welcome Page</title>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="stylesheets\stylesheet.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <div class="container">
-    <h1></h1>
-    <button class="btn" id="logout-btn">Logout</button>
+  <header class="main-header">
+    <h3>
+      <button class="logo-text" id="logout-btn">Logout</button>
+    </h3>
+    <h1>Travel Voters</h1>
+    <h2>"Traveling—It leaves you speechless, then turns you into a storyteller."</h2>
+
+  </header>
+  <main class="main-content">
+    <ul class="thumbnail-list">
+      <li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
+        <a href="img/bali-indonesia.jpg" data-image-role="trigger"
+        data-image-title="Bali, Indonesia"
+        data-image-url="img/bali-indonesia.jpg"
+        data-image-desc="Bali is the most popular island holiday destination in the Indonesian archipelago, with good reason. Here you’ll experience a fine combination of sandy beaches and rolling surf, an ancient culture known for its warm hospitality, and exotic temples and palaces set against stunning natural backdrops. Travel inland and towering volcanoes and pristine jungles await with plenty to see and do, although most can’t stay away from the beach for long. Meal times on Bali offer endless choice of local or far-flung cuisine and, after sunset, famous hotspots come to life offering exciting clubbing scenes and packed dancefloors.">
+        <img onmouseover="getElementById('preview').src=getElementById('bali-indonesia').src"
+        id="bali-indonesia" class="thumbnail-image" src="img/bali-indonesia.jpg" alt="Bali, Indonesia">
+        <span class="thumbnail-title">Bali, Indonesia</span>
+      </a>
+    </li>
+
+    <li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
+      <a href="img/barcelona-spain.jpg" data-image-role="trigger"
+      data-image-title="Barcelona, Spain"
+      data-image-url="img/barcelona-spain.jpg"
+      data-image-desc="Barcelona is an extremely walkable city, and you’re unlikely to get lost as long as you have a map of some kind. In the city, you can window shop along Las Ramblas, stroll down the beach boardwalk, and or wander through the Gaudi-designed Park Güell. And the dining options are great for a solo traveler too—you can eat al fresco at waterfront paella restaurants (people-watching is built-in entertainment) or opt for a counter seat at one of the city’s many incredible tapas bars.">
+      <img onmouseover="getElementById('preview').src=getElementById('barcelona-spain').src"
+      id="barcelona-spain" class="thumbnail-image" src="img/barcelona-spain.jpg" alt="Barcelona, Spain">
+      <span class="thumbnail-title">Barcelona, Spain</span>
+    </a>
+  </li>
+
+  <li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
+    <a href="img/belgrade-serbia.jpg" data-image-role="trigger"
+    data-image-title="Belgrade, Serbia"
+    data-image-url="img/belgrade-serbia.jpg"
+    data-image-desc="Since the end of the Yugoslav wars, Belgrade has attracted steady investment—its graffiti-covered neighborhoods are now full of restaurants and bars. You’ll find hearty platters of ćevapi—smoky sausages without casing—and stuffed somborka peppers at Sokače, paprika-laden kebabs at Tri Šešira, and pan-Latin tapas at Toro. But the biggest draw is the growing craft-beer scene (the city has 37 breweries). Don’t miss the Kabinet Supernova IPA at Prohibicija in the bar-filled Savamala district, as well as Kas’s full-bodied pale ales and Salto’s IPA at Bajloni, set in a 100-year-old brewery space in Cetinjska.">
+    <img onmouseover="getElementById('preview').src=getElementById('belgrade-serbia').src"
+    id="belgrade-serbia" class="thumbnail-image" src="img/belgrade-serbia.jpg" alt="Belgrade, Serbia">
+    <span class="thumbnail-title">Belgrade, Serbia</span>
+  </a>
+</li>
+
+<li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
+  <a href="img/copenhagen-denmark.jpg" data-image-role="trigger"
+  data-image-title="Copenhagen, Denmark"
+  data-image-url="img/copenhagen-denmark.jpg"
+  data-image-desc="Copenhagen’s quirkiness caters toward parties of one. From my single room at the Hotel Bethel, I was right on top of Nyhavn, the iconic canal lined with multicolored houses. My commute to embark on the canal tour, as well as to enjoy fine dining at Cap Horn, was less than 100 footsteps. Solo dining was encouraged at the Torvehallerne KBH food hall down the street, and at the Church Of Our Savor, other single travelers and I traded cameras to snap each other’s shots at the top of the spire overlooking the city.">
+  <img onmouseover="getElementById('preview').src=getElementById('copenhagen-denmark').src"
+  id="copenhagen-denmark" class="thumbnail-image" src="img/copenhagen-denmark.jpg" alt="Copenhagen, Denmark">
+  <span class="thumbnail-title">Copenhagen, Denmark</span>
+</a>
+</li>
+
+<li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
+  <a href="img/dubrovnik-croatia.jpg" data-image-role="trigger"
+  data-image-title="Dubrovnik, Croatia"
+  data-image-url="img/dubrovnik-croatia.jpg"
+  data-image-desc="The rise in Croatian tourism has improved the ease of travel, and the country’s low crime rating heightens the appeal. One look at the oceanfront medieval city of Dubrovnik, preserved by 6,365 feet of pristine walls, and all my worries vanished. The cobblestone streets guided me through artisanal shops and local eats, while a walk along the wall itself offered spectacular bird’s eye views of the Adriatic coastline. Other great solo activities: there’s a beach just a few minutes away from Old Town, with plenty of kayak and snorkeling tours offered along the way.">
+  <img onmouseover="getElementById('preview').src=getElementById('dubrovnik-croatia').src"
+  id="dubrovnik-croatia" class="thumbnail-image" src="img/dubrovnik-croatia.jpg" alt="Dubrovnik, Croatia">
+  <span class="thumbnail-title">Dubrovnik, Croatia</span>
+</a>
+</li>
+
+<li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
+  <a href="img/guayaquil-ecuador.jpg" data-image-role="trigger"
+  data-image-title="Guayaquil, Ecuador"
+  data-image-url="img/guayaquil-ecuador.jpg"
+  data-image-desc="As a gateway to the Galápagos, Guayaquil has seen its fair share of overnight visitors en route to the islands. But additions to the tropical port city are enticing travelers to stay longer. The just-opened Hotel del Parque sets a new standard in the city, with 44 elegant rooms in a restored 19th-century colonial complex that also includes a riverside restaurant. The massage-treatment room is in a repurposed bell tower atop the property’s original chapel, an airy mix of Gothic and Mediterranean styles where mass is still held. And the hotel’s setting on the seven-acre Parque Histórico Guayaquil makes it easy for guests to explore a wildlife sanctuary, historic structures, and a former cacao plantation. See modern Guayaquil when you visit the Malecón 2000, the city’s revitalized riverfront promenade lined with plazas, playgrounds, monuments, galleries, gardens, and two fantastic museums. Go at night for the best view, when the Ferris wheel—Ecuador’s newest toy—is backed by the twinkling lights above the hillside village of Las Penas.">
+  <img onmouseover="getElementById('preview').src=getElementById('guayaquil-ecuador').src"
+  id="guayaquil-ecuador" class="thumbnail-image" src="img/guayaquil-ecuador.jpg" alt="Guayaquil, Ecuador">
+  <span class="thumbnail-title">Guayaquil, Ecuador</span>
+</a>
+</li>
+
+<li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
+  <a href="img/hampi-india.jpg" data-image-role="trigger"
+  data-image-title="Hampi, India"
+  data-image-url="img/hampi-india.jpg"
+  data-image-desc="One of India’s most spectacular monuments will become newly accessible this year with the launch of a high-end resort in Hampi. When the 14th-century capital of the Vijayanagara Empire was constructed, in what is now the southwestern state of Karnataka, it was one of the largest cities in the world. The ruined settlement’s dazzling temples, monuments, and public buildings—strewn across a landscape of giant boulders, banana groves, and rice paddies—have long been a must-visit for dedicated Indophiles. But the town of Hampi has lacked world-class accommodation and infrastructure, making a visit less than luxurious. Now the new Orange County, Hampi offers a solution: 46 rooms spread across a palatial, Vijayanagara-inspired estate less than three miles from the UNESCO World Heritage site area. As Lucy Davis, director of India tour operator Banyan Tours, puts it, “the property is a game-changer for visitors to Hampi.”">
+  <img onmouseover="getElementById('preview').src=getElementById('hampi-india').src"
+  id="hampi-india" class="thumbnail-image" src="img/hampi-india.jpg" alt="Hampi, India">
+  <span class="thumbnail-title">Hampi, India</span>
+</a>
+</li>
+
+<li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
+  <a href="img/helsinki-finland.jpg" data-image-role="trigger"
+  data-image-title="Helsinki, Finland"
+  data-image-url="img/helsinki-finland.jpg"
+  data-image-desc="Finland celebrates 100 years of independence on December 6, 2017, but the parties will start much earlier—and many of them will be happening in Helsinki, the capital. The country's gift to itself is a major new landmark: the sinuous Central Library, designed by ALA Architects to be Helsinki’s new living room (it will open in 2018). Sauna culture is a big part of everyday life in the city. The latest and greatest public one is Löyly, a contemporary geometric complex of wood designed by Avanto Architects. And on Sauna Day, which takes place twice a year, several unique private saunas, including one on a raft and another in a castle, open to the public. When it comes to a design-savvy place to stay, book a room at Lilla Roberts, at least until the summer opening of sister hotel St. George, a grand 150-room property in a 19th-century landmark building.">
+  <img onmouseover="getElementById('preview').src=getElementById('helsinki-finland').src"
+  id="helsinki-finland" class="thumbnail-image" src="img/helsinki-finland.jpg" alt="Helsinki, Finland">
+  <span class="thumbnail-title">Helsinki, Finland</span>
+</a>
+</li>
+
+<li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
+  <a href="img/okinawa-japan.jpg" data-image-role="trigger"
+  data-image-title="Okinawa, Japan"
+  data-image-url="img/okinawa-japan.jpg"
+  data-image-desc="For a taste of Japan without the overwhelming hustle, head to Naha, the capital of the Okinawa islands. The monorail is super accessible—it links the airport to the city center as well as the popular Shuri Castle. And within walking distance of the city center are the Naminoue city beach, Tsuboya pottery district, and Makishi Public Market, where the pull-up-a-chair stands are perfect for solo dining. Lastly, the Japanese hospitality mixed with the American influence—due to the area’s U.S. military base—provides familiarity among the foreignness of the Asian island.">
+  <img onmouseover="getElementById('preview').src=getElementById('okinawa-japan').src"
+  id="okinawa-japan" class="thumbnail-image" src="img/okinawa-japan.jpg" alt="Okinawa, Japan">
+  <span class="thumbnail-title">Okinawa, Japan</span>
+</a>
+</li>
+
+<li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
+  <a href="img/la-paz-bolivia.jpg" data-image-role="trigger"
+  data-image-title="La Paz, Bolivia"
+  data-image-url="img/la-paz-bolivia.jpg"
+  data-image-desc="Once beleaguered by frequent strikes, roadblocks, and a paucity of amenities, the backpacker haven of La Paz has emerged as a true culture capital. Infrastructure has played a key role: in 2014 the city introduced Mi Teleférico, a network of aerial trams that transport riders across the city in minutes on routes that once took an hour by bus. The city’s culinary scene is being driven by fine-dining restaurant Gustu, launched by Noma cofounder Claus Meyer in 2013. Since then, the restaurant scene has exploded with ventures from Gustu alums: elevated vegan fare at Ali Pacha, locally inspired pastas at Propiedad Pública, and house-roasted, single-origin coffee at Typica. Stay in the city’s first Design Hotel, the Atix. Each of the 53 rooms doubles as a gallery, displaying works by Bolivian artists like Gastón Ugalde. It’s a microcosm of the city’s thriving contemporary art scene: galleries like Mérida Romero, Mamani Mamani, and the reopened Salar Galería de Arte showcase much of the country’s top talent.">
+  <img onmouseover="getElementById('preview').src=getElementById('la-paz-bolivia').src"
+  id="la-paz-bolivia" class="thumbnail-image" src="img/la-paz-bolivia.jpg" alt="La Paz, Bolivia">
+  <span class="thumbnail-title">La Paz, Bolivia</span>
+</a>
+</li>
+
+</ul>
+
+<!-- Modal -->
+<div class="modal fade" id="destModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          <div class="detail-image-title" data-image-role="title"></div>
+        </h5>
+      </div>
+      <div class="modal-body">
+        <div class="detail-image-container">
+          <div class="detail-image-frame">
+            <img class="detail-image" data-image-role="target" src="img/bali-indonesia.jpg" alt="">
+            <br><br>
+            <h4>Description:</h4>
+            <div class="detail-image-description" data-image-role="description"></div>
+            <h4>Ranking:</h4>
+            <div class="detail-image-description">5/5.</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Vote</button>
+      </div>
+    </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
-  <script type="text/javascript" src="scripts/dashboard.js"></script>
-  <script type="text/javascript" src="/dpd.js"></script>
+</div>
+
+
+<div class="detail-image-container">
+  <div class="detail-image-frame">
+    <img id="preview" class="detail-image-preview" data-image-role="target" src="img/bali-indonesia.jpg" alt="">
+  </div>
+</div>
+
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="scripts/dashboard.js"></script>
+<script type="text/javascript" src="/dpd.js"></script>
+<script src="scripts/formHandler.js" charset="utf-8"></script>
+<script src="scripts/remotedatastores.js" charset="utf-8"></script>
+<script src="scripts/datastore.js" charset="utf-8"></script>
+<script src="scripts/user.js" charset="utf-8"></script>
+<script src="scripts/main.js" charset="utf-8"></script>
+
 </body>
 </html>
