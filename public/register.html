@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body class="container">
+  <header>
+    <h1>Register</h1>
+  </header>
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form id="register-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input class="form-control" type="text" id="username" autofocus required pattern="[a-zA-Z\s]+"/>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input class="form-control" type="password" id="password" />
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password:</label>
+            <input class="form-control" type="password" id="confirm-password" /><br />
+          </div>
+          <button type="submit" class="btn btn-default">Sign up</button>
+          <a href="/" class="btn btn-link">home</a>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="scripts/dpd-user-api.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/dpd.js"></script>
+</body>
+</html>

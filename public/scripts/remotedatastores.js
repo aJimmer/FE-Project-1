@@ -1,4 +1,4 @@
-(function (window) {
+/*(function (window) {
   'use strict';
   var App = window.App || {};
   var $ = window.jQuery;
@@ -18,7 +18,7 @@
 
      $.post(this.serverUrl, val, function (serverResponse) {
        console.log(serverResponse);
-    });*/
+    });
   };
 
   RemoteDataStore.prototype.getAll = function(cb) {
@@ -44,3 +44,4 @@
   App.RemoteDataStore = RemoteDataStore;
   window.App = App;
 })(window);
+*/

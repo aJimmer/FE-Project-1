@@ -1,4 +1,4 @@
-(function (window) {
+/*(function (window) {
   'use strict';
   var App = window.App || {};
   var $ = window.jQuery;
@@ -33,3 +33,4 @@
   App.FormHandler = FormHandler;
   window.App = App;
 })(window);
+*/

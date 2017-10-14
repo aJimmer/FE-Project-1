@@ -1,5 +1,6 @@
-/*$(document).ready(function() {
+$(document).ready(function() {
 
+// error message
   function showError(error) {
     var message = "An error occurred";
     if (error.message) {
@@ -14,22 +15,57 @@
 
     alert(message);
   }
-  $('#signup-form').submit(function() {
-    //Get the data from the form
-    var name = $('#username').val();
-    var comment = $('#password').val();
-    console.log('username: ' + name, ' password: ' + comment);
 
-    dpd.users.post({
-      username: name,
-      password: comment
-    }, function(comment, error) {
-      if (error) return showError(error);
+  // checks for a logged in user
+
+  dpd.users.me(function(user) {
+    if (user) {
+      location.href = "/welcome.html";
+    }
+  });
+
+  // handles the login form when a username and password are given as parameters
+
+  $('#login-form').submit(function() {
+    var username = $('#username').val();
+    var password = $('#password').val();
+    console.log('here');
+    dpd.users.login({username: username, password: password}, function(session, error) {
+      if (error) {
+        alert(error.message);
+      } else {
+        location.href = "/welcome.html";
+      }
     });
-    this.reset();
-    this.elements[0].focus();
+
     return false;
   });
+
+  // handles the registration for when a user enters and confirms a username and password
+
+  $('#register-form').submit(function() {
+    var username = $('#username').val();
+    var password = $('#password').val();
+    var confirmPassword = $('#confirm-password').val();
+
+    if (!username) {
+      alert("Username is required");
+    } else if (!password) {
+      alert("Password is required");
+    } else if (password !== confirmPassword) {
+      alert("Passwords do not match");
+    } else {
+      dpd.users.post({username: username, password: password}, function(user, error) {
+        if (error) {
+          alert(JSON.stringify(error));
+        } else {
+          location.href = "/index.html";
+        }
+      });
+    }
+
+    return false;
+  });
+
   return false;
 });
-*/

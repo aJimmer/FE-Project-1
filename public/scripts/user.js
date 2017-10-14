@@ -1,4 +1,4 @@
-(function (window) {
+/*(function (window) {
   'use strict';
   var App = window.App || {};
 
@@ -24,7 +24,8 @@
         console.log(this.db.get(id));
       }.bind(this);
 };
-*/
+
   App.User = User;
   window.App = App;
 })(window);
+*/

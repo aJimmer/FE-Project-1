@@ -1,4 +1,4 @@
-(function (window) {
+/*(function (window) {
   'use strict';
   var FORM_SELECTOR = '[data-username-password="form"]';
   var SERVER_URL = 'http://localhost:2403/users';
@@ -17,3 +17,4 @@
   });
   console.log(formHandler);
 })(window);
+*/
