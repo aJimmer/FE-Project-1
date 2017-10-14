@@ -1,5 +1,12 @@
-/*(function (window) {
+(function (window) {
   'use strict';
+  var LOGIN_SELECTOR = '[data-login-form="form"]';
+  var App = window.App;
+  var LoginHandler = App.LoginHandler;
+
+  var loginHandler = new LoginHandler(LOGIN_SELECTOR);
+  loginHandler.addSubmitHandler();
+  /*
   var FORM_SELECTOR = '[data-username-password="form"]';
   var SERVER_URL = 'http://localhost:2403/users';
   var App = window.App;
@@ -16,5 +23,5 @@
     user.createUser.call(user, data);
   });
   console.log(formHandler);
+  */
 })(window);
-*/
