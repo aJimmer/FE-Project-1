@@ -9,13 +9,20 @@
     body {
       padding-top: 50px;
     }
+
+    .hidden {
+      visibility: hidden;
+    }
   </style>
 </head>
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbar-login-group">
-      <div>
+      <div id="navbar-add-button" class="hidden">
+        <button type="button" name="addnew" value="addnew" class="btn btn-default navbar-btn navbar-left">Add new</button>
+      </div>
+      <div id="navbar-login-form" data-login-div="div">
         <form action="post" class="navbar-form navbar-right" data-login-form="form">
           <div class="form-group">
             <input type="text" name="username" placeholder="username">
@@ -23,6 +30,10 @@
           </div>
           <input type="submit" name="Submit" value="Submit">
         </form>
+        <div id="navbar-user-logout" class="navbar-right hidden">
+          <p id="navbar-username" class="navbar-text"></p>
+          <button id="navbar-logout" class="btn btn-default navbar-btn" type="button" name="logout">Logout</button>
+        </div>
       </div>
     </div>
   </div>

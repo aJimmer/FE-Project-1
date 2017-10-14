@@ -1,6 +1,6 @@
 (function (window) {
   'use strict';
-  var LOGIN_SELECTOR = '[data-login-form="form"]';
+  var LOGIN_SELECTOR = '[data-login-div="div"]';
   var App = window.App;
   var LoginHandler = App.LoginHandler;
 
