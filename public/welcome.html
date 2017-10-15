@@ -132,6 +132,25 @@
 
 </ul>
 
+<!-- Template -->
+<script id="places-template" type="x-tmp-mustache">
+<li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
+  <a href="{{imageurl}}" data-image-role="trigger"
+  data-image-title="{{name}}"
+  data-image-url="{{imageurl}}"
+  data-image-desc="{{description}}">
+  <img onmouseover="getElementById('preview').src=getElementById('{{name}}').src"
+  id="{{name}}" class="thumbnail-image" src="{{imageurl}}" alt="{{name}}">
+  <span class="thumbnail-title">{{name}}</span>
+</a>
+</li>
+</script>
+
+<ul id="target" class="thumbnail-list"></ul>
+
+<script>
+</script>
+
 <!-- Modal -->
 <div class="modal fade" id="destModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -176,6 +195,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
 <script type="text/javascript" src="scripts/dashboard.js"></script>
 <script type="text/javascript" src="/dpd.js"></script>
 <script src="scripts/formHandler.js" charset="utf-8"></script>

@@ -1,8 +1,8 @@
-
 var DETAIL_IMAGE_SELECTOR = '[data-image-role="target"]';
 var DETAIL_TITLE_SELECTOR = '[data-image-role="title"]';
 var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
 var DETAIL_DESCRIPTION_SELECTOR = '[data-image-role="description"]';
+
 
 function setDetails(imageUrl, titleText, descText) {
   'use strict';
@@ -56,15 +56,34 @@ function getThumbnailsArray() {
 
 function initializeEvents() {
   'use strict';
-  var thumbnails = getThumbnailsArray();  //get the array of thumbnails
+  loadPlaces();
+  var thumbnails = getThumbnailsArray(); //get the array of thumbnails
   // iterate over the array, adding click handler to each elem
   thumbnails.forEach(addThumbClickHandler);
+}
+
+function loadPlaces() {
+  'use strict';
+  var thumbnails = {};
+  var template = $('#places-template').html();
+  Mustache.parse(template);
+  dpd.places.get(function(results, error) {
+    results.forEach(function(place) {
+      var rendered = Mustache.render(template, place);
+      $('#target').append(rendered);
+      var thumbnail = $(rendered).children()[0];
+    });
+  }).then(function() {
+    var thumbnails = $('#target').find('li a');
+    var thumbnailArray = [].slice.call(thumbnails);
+    thumbnailArray.forEach(addThumbClickHandler);
+  });
 }
 
 initializeEvents();
 
 
-(function (window) {
+(function(window) {
   'use strict';
   var LOGIN_SELECTOR = '[data-login-div="div"]';
   var App = window.App;
