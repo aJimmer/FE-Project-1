@@ -86,8 +86,15 @@ initializeEvents();
 (function(window) {
   'use strict';
   var LOGIN_SELECTOR = '[data-login-div="div"]';
+  var FORM_SELECTOR = '[data-picture-form="form"]';
+
   var App = window.App;
   var LoginHandler = App.LoginHandler;
+  var FormHandler = App.FormHandler;
+
+  var formHandler = new FormHandler(FORM_SELECTOR);
+    formHandler.addSubmitHandler();
+    formHandler.addOnInputHandler();
 
   var loginHandler = new LoginHandler(LOGIN_SELECTOR);
   loginHandler.addSubmitHandler();
