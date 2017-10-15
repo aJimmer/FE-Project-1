@@ -4,7 +4,7 @@
   <title>Welcome Page</title>
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
   <link rel="stylesheet" type="text/css" href="stylesheets\stylesheet.css">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
@@ -13,13 +13,34 @@
   <header class="main-header">
     <h3>
       <button class="logo-text" id="logout-btn">Logout</button>
+      <button type="button" class="logo-text" id="post-btn" data-toggle="modal" data-target="#postModal">Post</button>
     </h3>
     <h1>Travel Voters</h1>
     <h2>"Traveling—It leaves you speechless, then turns you into a storyteller."</h2>
 
   </header>
   <main class="main-content">
+  	<script id="places-template" type="x-tmp-mustache">
+<li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
+  <a href="{{imageurl}}" data-image-role="trigger"
+  data-image-title="{{name}}"
+  data-image-url="{{imageurl}}"
+  data-image-desc="{{description}}">
+  <img onmouseover="getElementById('preview').src=getElementById('{{name}}').src"
+  id="{{name}}" class="thumbnail-image" src="{{imageurl}}" alt="{{name}}">
+  <span class="thumbnail-title">{{name}}</span>
+</a>
+</li>
+</script>
+
+<ul id="target" class="thumbnail-list"></ul>
+
     <ul class="thumbnail-list">
+
+
+
+
+      <!--
       <li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
         <a href="img/bali-indonesia.jpg" data-image-role="trigger"
         data-image-title="Bali, Indonesia"
@@ -90,7 +111,7 @@
   <a href="img/hampi-india.jpg" data-image-role="trigger"
   data-image-title="Hampi, India"
   data-image-url="img/hampi-india.jpg"
-  data-image-desc="One of India’s most spectacular monuments will become newly accessible this year with the launch of a high-end resort in Hampi. When the 14th-century capital of the Vijayanagara Empire was constructed, in what is now the southwestern state of Karnataka, it was one of the largest cities in the world. The ruined settlement’s dazzling temples, monuments, and public buildings—strewn across a landscape of giant boulders, banana groves, and rice paddies—have long been a must-visit for dedicated Indophiles. But the town of Hampi has lacked world-class accommodation and infrastructure, making a visit less than luxurious. Now the new Orange County, Hampi offers a solution: 46 rooms spread across a palatial, Vijayanagara-inspired estate less than three miles from the UNESCO World Heritage site area. As Lucy Davis, director of India tour operator Banyan Tours, puts it, “the property is a game-changer for visitors to Hampi.”">
+  data-image-desc="One of India’s most spectacular monuments will become newly accessible this year with the launch of a high-end resort in Hampi. When the 14th-century capital of the Vijayanagara Empire was constructed, in what is now the southwestern state of Karnataka, it was one of the largest cities in the world. The ruined settlement’s dazzling temples, monuments, and public buildings—strewn across a landscape of giant boulders, banana groves, and rice paddies—have long been a must-visit for dedicated Indophiles. But the town of Hampi has lacked world-class accommodation and infrastructure, making a visit less than luxurious. Now the new Orange County, Hampi offers a solution: 46 rooms spread across a palatial, Vijayanagara-inspired estate less than three miles from the UNESCO World Heritage site area. As Lucy Davis, director of India tour operator Banyan Tours, puts it, “the property is a game-changer for visitors to Hampi.">
   <img onmouseover="getElementById('preview').src=getElementById('hampi-india').src"
   id="hampi-india" class="thumbnail-image" src="img/hampi-india.jpg" alt="Hampi, India">
   <span class="thumbnail-title">Hampi, India</span>
@@ -128,28 +149,8 @@
   id="la-paz-bolivia" class="thumbnail-image" src="img/la-paz-bolivia.jpg" alt="La Paz, Bolivia">
   <span class="thumbnail-title">La Paz, Bolivia</span>
 </a>
-</li>
-
+</li>-->
 </ul>
-
-<!-- Template -->
-<script id="places-template" type="x-tmp-mustache">
-<li class="thumbnail-item" data-toggle="modal" data-target="#destModal">
-  <a href="{{imageurl}}" data-image-role="trigger"
-  data-image-title="{{name}}"
-  data-image-url="{{imageurl}}"
-  data-image-desc="{{description}}">
-  <img onmouseover="getElementById('preview').src=getElementById('{{name}}').src"
-  id="{{name}}" class="thumbnail-image" src="{{imageurl}}" alt="{{name}}">
-  <span class="thumbnail-title">{{name}}</span>
-</a>
-</li>
-</script>
-
-<ul id="target" class="thumbnail-list"></ul>
-
-<script>
-</script>
 
 <!-- Modal -->
 <div class="modal fade" id="destModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -183,10 +184,52 @@
   </div>
 </div>
 
+<div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title" id="exampleModalLabel">
+          <div class="detail-image-title">Post Your Travel</div>
+        </h5>
+      </div>
+      <div class="modal-body">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form data-coffee-order="form" id="places-form">
+              <div class="form-group">
+                <label for="Location">Where did you go?</label>
+                <input class="form-control" name="Location" id="name" autofocus required pattern="[a-zA-Z\s]+">
+              </div>
+              <div class="form-group">
+                <label for="locationComment">Describe the location</label>
+                <input class="form-control" name="locationComment" id="description" autofocus required pattern="[a-zA-Z\s]+">
+              </div>
+              <div class="form-group">
+                <label for="rateLocation">How would you rate your stay </label>
+                <input name="rateLocation" id="rating" value="10">
+              </div>
+              <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="submit" class="btn btn-primary" id="places-submit">Submit</button>
+		      </div>
+            </form>
+            <form action="fileupload" enctype="multipart/form-data" data-picture-form="form">
+                <label for= "uploadPic">Please upload a picture of your destination</label>
+                <input type="file" name="file" value="file">
+			</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="detail-image-container">
   <div class="detail-image-frame">
-    <img id="preview" class="detail-image-preview" data-image-role="target" src="img/bali-indonesia.jpg" alt="">
+    <img id="preview" class="detail-image-preview" data-image-role="target" src={{ imageurl }} alt="">
   </div>
 </div>
 
@@ -197,6 +240,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
 <script type="text/javascript" src="scripts/dashboard.js"></script>
+<script src="scripts/dpd-places-api.js" charset="utf-8"></script>
 <script type="text/javascript" src="/dpd.js"></script>
 <script src="scripts/formHandler.js" charset="utf-8"></script>
 <script src="scripts/remotedatastores.js" charset="utf-8"></script>

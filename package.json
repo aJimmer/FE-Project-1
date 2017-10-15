@@ -4,8 +4,7 @@
   },
   "dependencies": {
     "deployd": "^1.0.0",
-    "dpd-clientlib": "^0.0.1",
     "dpd-dashboard": "^0.0.1",
-    "mustache": "^2.3.0"
+    "dpd-clientlib": "^0.0.1"
   }
 }
