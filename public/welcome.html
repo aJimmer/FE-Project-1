@@ -151,7 +151,7 @@
 </li>-->
     </ul>
 
-    <!-- Modal -->
+    <!-- Modal for Destination Description -->
     <div class="modal fade" id="destModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -170,19 +170,27 @@
                 <br><br>
                 <h4>Description:</h4>
                 <div class="detail-image-description" data-image-role="description"></div>
-                <h4>Ranking:</h4>
-                <div class="detail-image-description">5/5.</div>
+                <h4>Rating:</h4>
+                <!--TODO: Make this number dynamic, it should be the average of the Voted Rating-->
+                <div class="detail-image-description">10/10.</div>
+                <div class="form-group">
+                  <h4>
+                    <label for="rateLocation">How would you rate this destination? </label>
+                    <input name="rateLocation" id="rating" value="10">
+                  </h4>
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <!--TODO: This button should update the average rating of the destination-->
             <button type="button" class="btn btn-primary">Vote</button>
           </div>
         </div>
       </div>
     </div>
-
+      
+    <!--Modal for Posting-->
     <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -200,19 +208,19 @@
                 <form action="fileupload" enctype="multipart/form-data" data-picture-form="form">
                   <div class="form-group">
                     <label for="Location">Where did you go?</label>
-                    <input class="form-control" name="Location" id="name" autofocus required pattern="[a-zA-Z\s]+">
+                    <input class="form-control" name="Location" id="name" autofocus required>
                   </div>
                   <div class="form-group">
                     <label for="locationComment">Describe the location</label>
-                    <input class="form-control" name="locationComment" id="description" autofocus required pattern="[a-zA-Z\s]+">
+                    <textarea class="form-control" rows="5" name="locationComment" id="description" autofocus required></textarea>
                   </div>
                   <div class="form-group">
-                    <label for="rateLocation">How would you rate your stay </label>
+                    <label for="rateLocation">How would you rate your stay? </label>
                     <input name="rateLocation" id="rating" value="10">
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="places-submit">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="places-submit" onclick="window.location.reload()">Submit</button>
                   </div>
                     <label for="uploadPic">Please upload a picture of your destination</label>
                     <input id="fileinput" type="file" name="file" value="file" accept=".jpg,.png,.gif">
@@ -226,7 +234,7 @@
 
     <div class="detail-image-container">
       <div class="detail-image-frame">
-        <img id="preview" class="detail-image-preview" data-image-role="target" src="img/bali-indonesia.jpg" alt="">
+        <img id="preview" class="detail-image-preview" data-image-role="target" src="img/travel-destinations.jpg" alt="">
       </div>
     </div>
 
