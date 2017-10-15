@@ -38,6 +38,16 @@ h4 {
 	width: 70px;
 }
 
+#post-btn {
+justify-content: center;
+text-align: center;
+width:70px;
+margin-left: auto;
+position: absolute;
+top:0;
+left:0;
+}
+
 a {
 	color: #FFF;
 }
