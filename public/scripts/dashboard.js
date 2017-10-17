@@ -1,7 +1,7 @@
 $(document).ready(function() {
   dpd.users.me(function(user) {
     if (user) {
-      $('h1').text("Welcome, " + user.username + " to Travel Voter!");
+      $('h1').text("Welcome, " + user.username + " to Travel Voters!");
     } else {
       location.href = "/";
     }
